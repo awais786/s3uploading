@@ -1,0 +1,10 @@
+requirements/private.txt
+s3uploading/settings/private.py
+*.pyc
+*.sqlite3
+.pytest_cache/
+*.env
+venv/
+.venv/
+venvs/
+*.log
