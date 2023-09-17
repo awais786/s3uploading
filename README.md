@@ -16,4 +16,12 @@
 ###AWS_SECRET_ACCESS_KEY = ""
 ###AWS_STORAGE_BUCKET_NAME = ""
 
+##CustomImageBackend 
+### It is using private acl
 
+##Image by default storages 
+### It is using default storage as s3boto3 and its acl is public-read
+##Private images
+### private acl
+###Public images
+##using public-read via settings.yml

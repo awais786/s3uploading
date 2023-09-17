@@ -183,6 +183,8 @@ LOGGING = {
     }
 }
 
+# You need to define following variables in private.py with valid credentials.
+
 # this code is contains all AWS related stuff.
 CONFIG_FILE = os.path.join(BASE_DIR, 'settings/settings_vars.yml')
 with codecs.open(CONFIG_FILE, encoding='utf-8') as f:
@@ -190,9 +192,17 @@ with codecs.open(CONFIG_FILE, encoding='utf-8') as f:
     ENV_TOKENS = __config__
 
 PRIVATE_IMAGE_BACKEND = ENV_TOKENS.get('PRIVATE_IMAGE_BACKEND')
-
 CUSTOM_STORAGE = 's3uploading.apps.storage.CustomStorageBackend'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+if AWS_ACCESS_KEY_ID != '' and AWS_SECRET_ACCESS_KEY != '' and AWS_STORAGE_BUCKET_NAME != '':
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+else:
+    raise "No AWS credentials provided"
+
+print(""" ============  ============  ============ """)
+print(f'your default storages is {DEFAULT_FILE_STORAGE}')
+print(""" ============  ============  ============ """)
+
 AWS_S3_REGION_NAME = 'us-east-1'  # depending ur bucket.
 AWS_DEFAULT_ACL = 'public-read'
 AWS_BUCKET_ACL = AWS_DEFAULT_ACL
