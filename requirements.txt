@@ -4,5 +4,6 @@ PyYAML==6.0.1
 boto3==1.7.0
 requests==2.31.0
 
-# if you want to see uploading objects logs with acl value use following fork
+# if you want to see uploading objects with `public-read` acl value use following fork.
 # -e git+https://github.com/awais786/boto3.git@@adding-logs#egg=boto3
+# INFO 2023-09-17 13:21:52,030 boto3 uploading object for bucket [mybucket], having key [abc.png]
