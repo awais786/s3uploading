@@ -1,27 +1,29 @@
 # s3uploading
 #### How do I run this project?
 
-##Create Environment
-###python -m venv env_s3uploading
+## Create Environment
+### python -m venv env_s3uploading
 
-##Activate the environment
-###source env_s3uploading/bin/activate
+## Activate the environment
+### source env_s3uploading/bin/activate
 
-##run following command to install requirements, create user and runserver
+## run following command to install requirements, create user and runserver
 ### make install_requirements
 ### make runserver
 
 ## Add AWS credentials in ur private.py
-###AWS_ACCESS_KEY_ID = ""
-###AWS_SECRET_ACCESS_KEY = ""
-###AWS_STORAGE_BUCKET_NAME = ""
+### WS_ACCESS_KEY_ID = ""
+## AWS_SECRET_ACCESS_KEY = ""
+## AWS_STORAGE_BUCKET_NAME = ""
 
-##CustomImageBackend 
+## CustomImageBackend 
 ### It is using private acl
 
-##Image by default storages 
+## Image by default storages 
 ### It is using default storage as s3boto3 and its acl is public-read
-##Private images
+
+## Private images
 ### private acl
-###Public images
-##using public-read via settings.yml
+
+## Public images
+### using public-read via settings.yml
