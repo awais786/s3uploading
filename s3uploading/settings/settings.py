@@ -183,13 +183,13 @@ LOGGING = {
     }
 }
 
-
 # this code is contains all AWS related stuff.
 CONFIG_FILE = os.path.join(BASE_DIR, 'settings/settings_vars.yml')
 with codecs.open(CONFIG_FILE, encoding='utf-8') as f:
     __config__ = yaml.safe_load(f)
     ENV_TOKENS = __config__
 
+PRIVATE_IMAGE_BACKEND = ENV_TOKENS.get('PRIVATE_IMAGE_BACKEND')
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_S3_REGION_NAME = 'us-east-1'  # depending ur bucket.
