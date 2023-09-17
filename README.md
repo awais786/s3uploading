@@ -7,8 +7,6 @@
 ##Activate the environment
 ###source env_s3uploading/bin/activate
 
-##run comment to install requirements and create user
+##run comment to install requirements, create user and runserver
 ### make install_requirements
-
-##Runserver
 ### make runserver
