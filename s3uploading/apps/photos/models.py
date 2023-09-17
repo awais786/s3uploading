@@ -1,16 +1,21 @@
-from django.db import models
-from django.core.files.storage import get_storage_class
-import io
-from django.core.files.base import ContentFile
-
 from django.conf import settings
+from django.core.files.base import ContentFile
+from django.core.files.storage import get_storage_class
+from django.db import models
+from storages.backends.s3boto3 import S3Boto3Storage
 
 from s3uploading.apps.storage import custom_storage
 
 
-class ImageByDefaultStorage(models.Model):
-    """ Here it will use django default storages."""
-    image = models.FileField(upload_to='default_storages/images')
+class ImageByDefaultStorage(models.Model):  # example 1
+    """ Here it will use django default storages which is right now s3boto3."""
+    # it will use s3boto3 because default storage is defined as s3boto3.
+    image = models.FileField(upload_to='public_images_1/images')
+
+
+class PublicImage(models.Model):    # example 1
+    """ Here using storages from settings."""
+    image = models.FileField(storage=S3Boto3Storage, upload_to='public_images_2/images')
 
 
 class PrivateImage(models.Model):
@@ -28,10 +33,6 @@ class CustomImageBackendExample(models.Model):
 
     def save(self, *args, **kwargs):
         buffer = ContentFile(self.image._file.file.read())
-        # pass the images to customs storage.
         custom_storage.save(self.image._file.name, buffer)
+        super(CustomImageBackendExample, self).save(*args, **kwargs)
 
-
-class PublicImage(models.Model):
-    """ Here using storages from settings."""
-    image = models.FileField(upload_to='public/images')
