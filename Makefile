@@ -22,4 +22,3 @@ install_requirements:
 	python manage.py migrate
 	python manage.py shell < add_superuser.py
 
-
