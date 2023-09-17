@@ -17,7 +17,7 @@ requirements:
 runserver:
 	python manage.py runserver
 
-requirements:
+install_requirements:
 	pip install -r requirements.txt
 	python manage.py migrate
 	python manage.py shell < add_superuser.py

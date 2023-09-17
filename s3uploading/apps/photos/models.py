@@ -1,8 +1,4 @@
-from django.core.files.storage import get_storage_class
 from django.db import models
-
-import logging
-log = logging.getLogger(__name__)
 
 
 class ImageByDefaultStorage(models.Model):
@@ -16,3 +12,8 @@ class PrivateImage(models.Model):
 
 class PublicImage(models.Model):
     image = models.FileField()
+
+    def save(self, *args, **kwargs):
+        import pdb;
+        pdb.set_trace()
+        super(PublicImage, self).save(*args, **kwargs)
