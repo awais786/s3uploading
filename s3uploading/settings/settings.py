@@ -185,11 +185,9 @@ LOGGING = {
 
 
 # this code is contains all AWS related stuff.
-
 CONFIG_FILE = os.path.join(BASE_DIR, 'settings/settings_vars.yml')
 with codecs.open(CONFIG_FILE, encoding='utf-8') as f:
     __config__ = yaml.safe_load(f)
-
     ENV_TOKENS = __config__
 
 
@@ -198,4 +196,3 @@ AWS_S3_REGION_NAME = 'us-east-1'
 AWS_DEFAULT_ACL = 'public-read'
 AWS_BUCKET_ACL = AWS_DEFAULT_ACL
 AWS_QUERYSTRING_EXPIRE = 3600
-
