@@ -28,10 +28,8 @@ class CustomImageBackendExample(models.Model):
 
     def save(self, *args, **kwargs):
         buffer = ContentFile(self.image._file.file.read())
-
         # pass the images to customs storage.
         custom_storage.save(self.image._file.name, buffer)
-        super(CustomImageBackendExample, self).save(*args, **kwargs)
 
 
 class PublicImage(models.Model):

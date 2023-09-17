@@ -191,6 +191,7 @@ with codecs.open(CONFIG_FILE, encoding='utf-8') as f:
 
 PRIVATE_IMAGE_BACKEND = ENV_TOKENS.get('PRIVATE_IMAGE_BACKEND')
 
+CUSTOM_STORAGE = 's3uploading.apps.storage.CustomStorageBackend'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_S3_REGION_NAME = 'us-east-1'  # depending ur bucket.
 AWS_DEFAULT_ACL = 'public-read'

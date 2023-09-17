@@ -13,6 +13,9 @@ class CustomStorageBackend(S3Boto3Storage):
     """
     def __init__(self):
         bucket_name = settings.PRIVATE_IMAGE_BACKEND['STORAGE_KWARGS']['bucket_name']
-        super().__init__(bucket_name=bucket_name, custom_domain=None, querystring_auth=True)
+        acl = settings.PRIVATE_IMAGE_BACKEND['STORAGE_KWARGS']['default_acl']
+        super().__init__(
+            bucket_name=bucket_name, default_acl=acl, querystring_auth=True
+        )
 
 custom_storage = get_storage_class(settings.CUSTOM_STORAGE)()
