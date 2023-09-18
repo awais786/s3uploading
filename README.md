@@ -37,9 +37,10 @@ AWS_STORAGE_BUCKET_NAME = ""
 `using public-read via settings.yml`
 
 ## s3boto3 settings orders
-1: First it picks settings `AWS_DEFAULT_ACL` or `AWS_BUCKET_ACL`
+1: `First it picks settings `AWS_DEFAULT_ACL` or `AWS_BUCKET_ACL``
 
-2: If bucket level settings exists then it overrides first one ```
+2: `If bucket level settings exists then it overrides first one.` 
+```
 PUBCLIC_IMAGE_BACKEND:
   class: storages.backends.s3boto3.S3Boto3Storage
   STORAGE_KWARGS:
@@ -47,7 +48,7 @@ PUBCLIC_IMAGE_BACKEND:
     default_acl: public-read
 ```
 
-3: If following `object_parameters` exists then it overrides both above2.
+3: `If following `object_parameters` exists then it overrides both above2.`
 ```
 PUBCLIC_IMAGE_BACKEND:
   class: storages.backends.s3boto3.S3Boto3Storage
