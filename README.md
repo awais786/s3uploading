@@ -45,7 +45,7 @@ AWS_STORAGE_BUCKET_NAME = ""
 PUBCLIC_IMAGE_BACKEND:
   class: storages.backends.s3boto3.S3Boto3Storage
   STORAGE_KWARGS:
-    bucket_name: awaisqureshi
+    bucket_name: def
     default_acl: public-read
 ```
 
@@ -55,7 +55,7 @@ PUBCLIC_IMAGE_BACKEND:
 PUBCLIC_IMAGE_BACKEND:
   class: storages.backends.s3boto3.S3Boto3Storage
   STORAGE_KWARGS:
-    bucket_name: awaisqureshi
+    bucket_name: abc
     default_acl: private
   object_parameters:
     CacheControl: max-age-3600
