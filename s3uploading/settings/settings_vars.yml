@@ -1,16 +1,15 @@
 PUBCLIC_IMAGE_BACKEND:
   class: storages.backends.s3boto3.S3Boto3Storage
   STORAGE_KWARGS:
-    bucket_name: yourbucket
+    bucket_name: awaisqureshi
     default_acl: public-read
-  object_parameters:
-    CacheControl: max-age-3600
 PRIVATE_IMAGE_BACKEND:
   class: storages.backends.s3boto3.S3Boto3Storage
   STORAGE_KWARGS:
-    bucket_name: youranotherbucket
+    bucket_name: awaisq
     default_acl: private
     querystring_auth: true
     querystring_expire: 500
   object_parameters:
     CacheControl: max-age-31536000
+    default_acl: public-read

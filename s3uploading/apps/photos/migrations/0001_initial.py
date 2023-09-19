@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
             name='PrivateImage',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('image', models.FileField(storage=storages.backends.s3boto3.S3Boto3Storage(bucket_name='awaisq', default_acl='private', querystring_auth=True, querystring_expire=500), upload_to='private/images')),
+                ('image', models.FileField(storage=storages.backends.s3boto3.S3Boto3Storage(default_acl='private', querystring_auth=True, querystring_expire=500), upload_to='private/images')),
             ],
         ),
         migrations.CreateModel(
