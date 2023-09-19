@@ -5,8 +5,9 @@ boto3==1.7.0
 requests==2.31.0
 
 # if you want to see uploading objects with `public-read` acl value use following fork and run both lines.
-# pip uninstall s3transfer
-# pip install -e git+https://github.com/awais786/s3transfer.git@0_1_13_adding_logs#egg=s3transfer
+# pip uninstall boto3
+# pip install -e git+https://github.com/awais786/boto3.git@adding-logs#egg=boto3
+
 
 # it will show log like following
 # boto3: uploading object for bucket [awaisqureshi], having key [public_images_2/images/abc.png] with acl [public-read]

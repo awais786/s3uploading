@@ -1,11 +1,11 @@
 from django.contrib import admin
 
 from s3uploading.apps.photos.models import (
-    PrivateImage, PublicImage, CustomImageBackendExample, ImageByDefaultStorage
+    PrivateImageExample, PublicImageExample, CustomImageBackendExample, DefaultStorageExample
 )
 
 
-admin.site.register(ImageByDefaultStorage)
-admin.site.register(PrivateImage)
-admin.site.register(PublicImage)
+admin.site.register(DefaultStorageExample)
+admin.site.register(PrivateImageExample)
+admin.site.register(PublicImageExample)
 admin.site.register(CustomImageBackendExample)

@@ -8,6 +8,9 @@ if not User.objects.filter(username=user_name).exists():
     User.objects.create_superuser(user_name, email, password)
 
 print("super user created !!!. login with following credentials")
+print('http://127.0.0.1:8000/admin/')
 print(user_name)
 print(email)
 print(password)
+
+
